@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AlertTriangle, ChevronRight, Bell, Shield, Clock, MapPin } from 'lucide-react';
 import { Incident } from '../types';
 import AlertDetailModal from './AlertDetailModal';
+import Chatbot from './Chatbot';
 
 interface AlertsScreenProps {
   incidents: Incident[];
@@ -9,8 +10,8 @@ interface AlertsScreenProps {
 
 const AlertsScreen: React.FC<AlertsScreenProps> = ({ incidents }) => {
   const [selectedIncident, setSelectedIncident] = useState<Incident | null>(null);
-  const hasActiveAlert = incidents.some(incident => 
-    incident.severity === 'high' && 
+  const hasActiveAlert = incidents.some(incident =>
+    incident.severity === 'high' &&
     new Date().getTime() - incident.timestamp.getTime() < 3600000
   );
 
@@ -79,16 +80,14 @@ const AlertsScreen: React.FC<AlertsScreenProps> = ({ incidents }) => {
             <button
               key={incident.id}
               onClick={() => setSelectedIncident(incident)}
-              className={`w-full text-left bg-white rounded-lg shadow-sm p-4 border-l-4 transition-transform hover:scale-[1.02] ${getSeverityColor(incident.severity)}`}
-            >
+              className={`w-full text-left bg-white rounded-lg shadow-sm p-4 border-l-4 transition-transform hover:scale-[1.02] ${getSeverityColor(incident.severity)}`}>
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-1">
-                    <AlertTriangle className={`w-5 h-5 ${
-                      incident.severity === 'high' ? 'text-red-500' :
-                      incident.severity === 'medium' ? 'text-yellow-500' :
-                      'text-blue-500'
-                    }`} />
+                    <AlertTriangle className={`w-5 h-5 ${incident.severity === 'high' ? 'text-red-500' :
+                        incident.severity === 'medium' ? 'text-yellow-500' :
+                          'text-blue-500'
+                      }`} />
                     <span className="font-semibold text-gray-900">
                       {incident.type.charAt(0).toUpperCase() + incident.type.slice(1)}
                     </span>
@@ -107,10 +106,13 @@ const AlertsScreen: React.FC<AlertsScreenProps> = ({ incidents }) => {
                 </div>
                 <ChevronRight className="w-5 h-5 text-gray-400" />
               </div>
+
             </button>
+
           ))}
         </div>
       </div>
+
 
       {/* Alert Detail Modal */}
       <AlertDetailModal

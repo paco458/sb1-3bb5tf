@@ -4,6 +4,7 @@ import Map from './components/Map';
 import AlertsScreen from './components/AlertsScreen';
 import IncidentModal from './components/IncidentModal';
 import NavigationBar from './components/NavigationBar';
+import ConsejosSeguridad from './components/ConsejosSeguridad';
 import { Incident } from './types';
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           </span>
         </div>
       </div>
+      
 
       {/* Main Content */}
       <main className="flex-1 relative overflow-hidden">
@@ -66,7 +68,9 @@ function App() {
                 </li>
               </ul>
             </div>
+            <ConsejosSeguridad />
           </div>
+          
         )}
         {activeTab === 'profile' && (
           <div className="p-4">
