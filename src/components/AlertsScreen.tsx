@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { AlertTriangle, ChevronRight, Bell, Shield, Clock, MapPin } from 'lucide-react';
 import { Incident } from '../types';
 import AlertDetailModal from './AlertDetailModal';
-import Chatbot from './Chatbot';
 
 interface AlertsScreenProps {
   incidents: Incident[];
@@ -39,9 +38,9 @@ const AlertsScreen: React.FC<AlertsScreenProps> = ({ incidents }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <AlertTriangle className="w-5 h-5 animate-pulse" />
-              <span className="font-medium">Active Security Alert</span>
+              <span className="font-medium">Alerta de seguridad activa</span>
             </div>
-            <span className="text-xs bg-red-600 px-2 py-1 rounded-full">LIVE</span>
+            <span className="text-xs bg-red-600 px-2 py-1 rounded-full">Palmeras</span>
           </div>
         </div>
       )}
@@ -50,13 +49,13 @@ const AlertsScreen: React.FC<AlertsScreenProps> = ({ incidents }) => {
       <div className="p-4">
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
           <div className="flex items-center justify-between mb-2">
-            <h2 className="text-lg font-semibold text-gray-900">Today's Overview</h2>
+            <h2 className="text-lg font-semibold text-gray-900">Resumen de hoy</h2>
             <Bell className="w-5 h-5 text-gray-500" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-indigo-50 rounded-lg p-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Active Alerts</span>
+                <span className="text-sm text-gray-600">Alertas activas</span>
                 <AlertTriangle className="w-4 h-4 text-indigo-600" />
               </div>
               <p className="text-2xl font-bold text-indigo-600 mt-1">
@@ -65,17 +64,17 @@ const AlertsScreen: React.FC<AlertsScreenProps> = ({ incidents }) => {
             </div>
             <div className="bg-green-50 rounded-lg p-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Area Status</span>
+                <span className="text-sm text-gray-600">Estado del área</span>
                 <Shield className="w-4 h-4 text-green-600" />
               </div>
-              <p className="text-sm font-medium text-green-600 mt-1">Monitored</p>
+              <p className="text-sm font-medium text-green-600 mt-1">Monitoreado</p>
             </div>
           </div>
         </div>
 
         {/* Recent Alerts */}
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Recent Alerts</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-3">Alertas recientes</h3>
           {incidents.map((incident) => (
             <button
               key={incident.id}
@@ -100,7 +99,7 @@ const AlertsScreen: React.FC<AlertsScreenProps> = ({ incidents }) => {
                     </div>
                     <div className="flex items-center space-x-1">
                       <MapPin className="w-4 h-4" />
-                      <span>0.5 miles away</span>
+                      <span>A 0,5 millas de distancia</span>
                     </div>
                   </div>
                 </div>

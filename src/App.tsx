@@ -13,17 +13,17 @@ function App() {
   const [incidents] = useState<Incident[]>([
     {
       id: 1,
-      type: 'theft',
+      type: 'robo',
       location: { lat: 40.7128, lng: -74.0060 },
-      description: 'Suspicious activity reported near Central Park',
+      description: 'Se reportó actividad sospechosa cerca',
       timestamp: new Date('2024-03-10T15:30:00'),
       severity: 'medium'
     },
     {
       id: 2,
-      type: 'suspicious',
+      type: 'sospechoso',
       location: { lat: 40.7580, lng: -73.9855 },
-      description: 'Attempted break-in at residential building',
+      description: 'Intento de robo en edificio residencial',
       timestamp: new Date('2024-03-10T14:15:00'),
       severity: 'high'
     }
@@ -35,7 +35,7 @@ function App() {
       <div className="bg-indigo-600 text-white px-4 py-2 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Navigation className="w-4 h-4" />
-          <span className="text-sm font-medium">SafetyWatch</span>
+          <span className="text-sm font-medium">Vigilancia de seguridad</span>
         </div>
         <div className="flex items-center space-x-2">
           <span className="text-xs bg-indigo-500 px-2 py-1 rounded-full">
@@ -52,19 +52,19 @@ function App() {
         {activeTab === 'tips' && (
           <div className="p-4 space-y-4">
             <div className="bg-white rounded-lg shadow-md p-4">
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Safety Tips</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">Consejos de seguridad</h2>
               <ul className="space-y-3">
                 <li className="flex items-start space-x-3">
                   <Shield className="w-5 h-5 text-indigo-500 mt-0.5" />
-                  <p className="text-gray-700">Stay aware of your surroundings at all times</p>
+                  <p className="text-gray-700">Manténgase consciente de su entorno en todo momento.</p>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Shield className="w-5 h-5 text-indigo-500 mt-0.5" />
-                  <p className="text-gray-700">Keep emergency contacts easily accessible</p>
+                  <p className="text-gray-700">Mantenga los contactos de emergencia fácilmente accesibles</p>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Shield className="w-5 h-5 text-indigo-500 mt-0.5" />
-                  <p className="text-gray-700">Report suspicious activity immediately</p>
+                  <p className="text-gray-700">Reportar actividad sospechosa inmediatamente</p>
                 </li>
               </ul>
             </div>
@@ -81,18 +81,18 @@ function App() {
                 </div>
                 <div>
                   <h2 className="text-xl font-semibold text-gray-900">John Doe</h2>
-                  <p className="text-gray-600">Community Member since 2024</p>
+                  <p className="text-gray-600">Miembro de la comunidad desde 2024</p>
                 </div>
               </div>
               <div className="space-y-4">
                 <button className="w-full py-2 px-4 bg-gray-100 rounded-lg text-left text-gray-700 hover:bg-gray-200 transition-colors">
-                  Settings
+                Ajustes
                 </button>
                 <button className="w-full py-2 px-4 bg-gray-100 rounded-lg text-left text-gray-700 hover:bg-gray-200 transition-colors">
-                  Notification Preferences
+                Preferencias de notificaciones
                 </button>
                 <button className="w-full py-2 px-4 bg-gray-100 rounded-lg text-left text-gray-700 hover:bg-gray-200 transition-colors">
-                  Privacy Settings
+                Configuración de privacidad
                 </button>
               </div>
             </div>

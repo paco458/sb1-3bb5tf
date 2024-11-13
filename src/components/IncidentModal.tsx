@@ -60,8 +60,8 @@ const IncidentModal: React.FC<IncidentModalProps> = ({ isOpen, onClose }) => {
             <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
               <Shield className="h-6 w-6 text-green-600" />
             </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">Report Submitted!</h3>
-            <p className="text-sm text-gray-500">Thank you for helping keep our community safe.</p>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">¡Informe enviado!</h3>
+            <p className="text-sm text-gray-500">Gracias por ayudarnos a mantener nuestra comunidad segura.</p>
           </div>
         </div>
       </div>
@@ -73,8 +73,8 @@ const IncidentModal: React.FC<IncidentModalProps> = ({ isOpen, onClose }) => {
       <div className="bg-white rounded-lg w-full max-w-md">
         <div className="flex justify-between items-center p-4 border-b">
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">Report Incident</h2>
-            <p className="text-sm text-gray-500">Help keep our community safe</p>
+            <h2 className="text-lg font-semibold text-gray-900">Reportar incidente</h2>
+            <p className="text-sm text-gray-500">Ayude a mantener nuestra comunidad segura</p>
           </div>
           <button
             onClick={onClose}
@@ -88,18 +88,17 @@ const IncidentModal: React.FC<IncidentModalProps> = ({ isOpen, onClose }) => {
           {/* Incident Type Selection */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              What type of incident are you reporting?
+            ¿Qué tipo de incidente estás reportando? 
             </label>
             <div className="grid grid-cols-2 gap-3">
               {INCIDENT_TYPES.map(({ id, label, icon: Icon, color }) => (
                 <button
                   key={id}
                   onClick={() => setIncidentType(id)}
-                  className={`flex items-center p-3 rounded-lg border-2 transition-all duration-200 ${
-                    incidentType === id
+                  className={`flex items-center p-3 rounded-lg border-2 transition-all duration-200 ${incidentType === id
                       ? 'border-indigo-500 bg-indigo-50'
                       : 'border-gray-200 hover:border-indigo-200'
-                  }`}
+                    }`}
                 >
                   <Icon className={`w-5 h-5 mr-2 ${color}`} />
                   <span className="text-sm font-medium text-gray-900">{label}</span>
@@ -111,7 +110,7 @@ const IncidentModal: React.FC<IncidentModalProps> = ({ isOpen, onClose }) => {
           {/* Description Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Description
+              Descripción
             </label>
             <textarea
               value={description}
@@ -128,7 +127,7 @@ const IncidentModal: React.FC<IncidentModalProps> = ({ isOpen, onClose }) => {
           {/* Location Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Location
+            Ubicación
             </label>
             <div className="relative">
               <input
@@ -152,13 +151,13 @@ const IncidentModal: React.FC<IncidentModalProps> = ({ isOpen, onClose }) => {
           {/* Media Upload */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Add Photos or Video (Optional)
+              Agregar fotos o videos (Optional)
             </label>
             <div className="flex items-center justify-center w-full">
               <label className="w-full flex flex-col items-center px-4 py-6 bg-white rounded-lg border-2 border-gray-300 border-dashed cursor-pointer hover:bg-gray-50">
                 <Camera className="w-8 h-8 text-gray-400" />
                 <span className="mt-2 text-sm text-gray-500">
-                  Click to upload media
+                  Haga clic para cargar el contenido multimedia
                 </span>
                 <input type="file" className="hidden" accept="image/*,video/*" multiple />
               </label>
@@ -171,7 +170,7 @@ const IncidentModal: React.FC<IncidentModalProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
             className="px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 border border-gray-300 rounded-lg transition-colors"
           >
-            Cancel
+            Cancelar
           </button>
           <button
             onClick={handleSubmit}
