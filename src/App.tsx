@@ -99,12 +99,12 @@ function App() {
                 </li>
               </ul>
             </div>
-            <ConsejosSeguridad   />
+            <ConsejosSeguridad/>
           </div>
           
         )}
         {activeTab === 'profile' && (
-          <div className="p-4">
+          <div className="p-4"> 
             <div className="bg-white rounded-lg shadow-md p-6">
               <div className="flex items-center space-x-4 mb-6">
                 <div className="bg-indigo-100 p-3 rounded-full">
