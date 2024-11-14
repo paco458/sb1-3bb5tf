@@ -45,7 +45,7 @@ const AlertsScreen: React.FC<AlertsScreenProps> = ({ incidents }) => {
         </div>
       )}
 
-      {/* Alerts Summary */}
+      {/* Alerta paginas */}
       <div className="p-4">
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
           <div className="flex items-center justify-between mb-2">

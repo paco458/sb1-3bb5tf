@@ -6,7 +6,7 @@ import IncidentModal from './components/IncidentModal';
 import NavigationBar from './components/NavigationBar';
 import ConsejosSeguridad from './components/ConsejosSeguridad';
 import { Incident } from './types';
-
+/*Agregaciòn de de reportes*/
 function App() {
   const [activeTab, setActiveTab] = useState('map');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,9 +26,29 @@ function App() {
       description: 'Intento de robo en edificio residencial',
       timestamp: new Date('2024-03-10T14:15:00'),
       severity: 'high'
-    }
+    },
+    {
+      id: 3,
+      type: 'sospechoso',
+      location: { lat: 40.7580, lng: -73.9855 },
+      description: 'Intento de robo en edificio residencial',
+      timestamp: new Date('2024-03-10T14:15:00'),
+      severity: 'high'
+    },
+    {
+      id: 4,
+      type: 'Accident',
+      location: { lat: 40.7580, lng: -73.9855 },
+      description: 'Intento de robo en edificio residencial',
+      timestamp: new Date('2024-03-10T14:15:00'),
+      severity: 'low'
+    },
+    
+    
+    
   ]);
-
+  //....................
+  /*m*/
   return (
     <div className="h-screen w-full bg-gray-50 flex flex-col relative">
       {/* Status Bar */}
@@ -43,9 +63,8 @@ function App() {
           </span>
         </div>
       </div>
-      
 
-      {/* Main Content */}
+      {/* Implementar Consejos */}
       <main className="flex-1 relative overflow-hidden">
         {activeTab === 'map' && <Map incidents={incidents} />}
         {activeTab === 'alerts' && <AlertsScreen incidents={incidents} />}
@@ -66,9 +85,21 @@ function App() {
                   <Shield className="w-5 h-5 text-indigo-500 mt-0.5" />
                   <p className="text-gray-700">Reportar actividad sospechosa inmediatamente</p>
                 </li>
+                <li className="flex items-start space-x-3">
+                  <Shield className="w-5 h-5 text-indigo-500 mt-0.5" />
+                  <p className="text-gray-700">Reportar actividad sospechosa inmediatamente</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <Shield className="w-5 h-5 text-indigo-500 mt-0.5" />
+                  <p className="text-gray-700">Reportar actividad sospechosa inmediatamente</p>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <Shield className="w-5 h-5 text-indigo-500 mt-0.5" />
+                  <p className="text-gray-700">Reportar actividad sospechosa inmediatamente</p>
+                </li>
               </ul>
             </div>
-            <ConsejosSeguridad />
+            <ConsejosSeguridad   />
           </div>
           
         )}
